@@ -3,6 +3,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using AmigoV2.Properties;
 using System.Linq;
+using System;
 
 namespace AmigoV2
 {
@@ -75,6 +76,11 @@ namespace AmigoV2
                 sqlConnection.Close();
             }
             MessageBox.Show("Options saved!", "Saved!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public void Update(BindingSource bidingSource, Engineer engineer)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -13,5 +13,6 @@ namespace AmigoV2
         void DeleteEngineer(BindingSource bidingSource, int engineerID);
         void AddEngineer(BindingSource bidingSource,Engineer engineer);
         void Save();
+        void Update(BindingSource bidingSource, Engineer engineer);
     }
 }

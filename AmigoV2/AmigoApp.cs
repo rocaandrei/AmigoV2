@@ -1,12 +1,14 @@
-﻿using System;
+﻿using AmigoV2.Properties;
+using System;
 using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace AmigoV2
 {
-    public partial class Form1 : Form
+    public partial class AmigoApp : Form
     {
-        public Form1()
+        public AmigoApp()
         {
             InitializeComponent();
         }
@@ -105,6 +107,17 @@ namespace AmigoV2
                     _currentSource = _dataSetSource;
                     break;
             }
+        }
+        private void UpdateButton_Click(object sender, EventArgs e)
+        {
+            var updatedEng = new Engineer()
+            {
+                EngineerID = int.Parse(EngineersIDTextBox.Text),
+                EngineerRole = RoleTextBox.Text,
+                EngineerName = NameTextBox.Text,
+                Gender = GenderTextBox.Text,
+            };
+            _currentSource.Update(_engineerBidingSource, updatedEng);
         }
     }
 

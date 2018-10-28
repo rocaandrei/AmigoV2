@@ -34,19 +34,33 @@ namespace AmigoV2
             int nextId = int.MinValue;
             foreach (var eng in _engineers)
             {
-                if(nextId <= eng.EngineerID)
+                if (nextId <= eng.EngineerID)
                 {
                     nextId = eng.EngineerID + 1;
                 }
             }
             engineer.EngineerID = nextId;
             bidingSource.Add(engineer);
-           
+
         }
         public void Save()
         {
             MessageBox.Show("Nu este cazul de Save() pentru ObjectSource pentru ca el ia obiectul venit din compilare", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //nu este cazul de implementare pentru ca la complilare vom avea aceleasi obiecte definite intial 
+        }
+
+        public void Update(BindingSource bidingSource, Engineer updatedEngineer)
+        {
+            foreach (var eng in _engineers)
+            {
+                if (eng.EngineerID == updatedEngineer.EngineerID)
+                {
+                    eng.EngineerName = updatedEngineer.EngineerName;
+                    eng.EngineerRole = updatedEngineer.EngineerRole;
+                    eng.Gender = updatedEngineer.Gender;
+                    eng.ShiftDay = updatedEngineer.ShiftDay;
+                }
+            }
         }
     }
 }

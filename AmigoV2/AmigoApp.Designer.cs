@@ -1,6 +1,6 @@
 ﻿namespace AmigoV2
 {
-    partial class Form1
+    partial class AmigoApp
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AmigoApp));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -54,6 +54,7 @@
             this.EmployeesListBox = new System.Windows.Forms.ListBox();
             this.tabPageGrid = new System.Windows.Forms.TabPage();
             this.EmployeesDataGridView = new System.Windows.Forms.DataGridView();
+            this.UpdateButton = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.FormTabPage.SuspendLayout();
@@ -63,6 +64,7 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripButton2,
@@ -77,7 +79,7 @@
             this.SourceToolStripComboBox});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(522, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(696, 28);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -87,7 +89,7 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Size = new System.Drawing.Size(24, 25);
             this.toolStripButton1.Text = "PreviousToolStripButton";
             this.toolStripButton1.Click += new System.EventHandler(this.OnClickMovePrevious_Click);
             // 
@@ -97,14 +99,14 @@
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton2.Size = new System.Drawing.Size(24, 25);
             this.toolStripButton2.Text = "ForwordToolStripButton";
             this.toolStripButton2.Click += new System.EventHandler(this.OnClickMoveNext_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 28);
             // 
             // toolStripButton3
             // 
@@ -112,7 +114,7 @@
             this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton3.Size = new System.Drawing.Size(24, 25);
             this.toolStripButton3.Text = "Add";
             this.toolStripButton3.Click += new System.EventHandler(this.AddEngineer_Click);
             // 
@@ -122,14 +124,14 @@
             this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton4.Size = new System.Drawing.Size(24, 25);
             this.toolStripButton4.Text = "Delete";
             this.toolStripButton4.Click += new System.EventHandler(this.DeleteEngineer_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 28);
             // 
             // toolStripButton5
             // 
@@ -137,24 +139,24 @@
             this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton5.Size = new System.Drawing.Size(24, 25);
             this.toolStripButton5.Text = "Save";
             this.toolStripButton5.Click += new System.EventHandler(this.OnClickSave_Click);
             // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(0, 22);
+            this.toolStripLabel1.Size = new System.Drawing.Size(0, 25);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 28);
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(49, 22);
+            this.toolStripLabel2.Size = new System.Drawing.Size(61, 25);
             this.toolStripLabel2.Text = "Source: ";
             // 
             // SourceToolStripComboBox
@@ -163,7 +165,7 @@
             "Objects",
             "DataSet"});
             this.SourceToolStripComboBox.Name = "SourceToolStripComboBox";
-            this.SourceToolStripComboBox.Size = new System.Drawing.Size(121, 25);
+            this.SourceToolStripComboBox.Size = new System.Drawing.Size(160, 28);
             this.SourceToolStripComboBox.SelectedIndexChanged += new System.EventHandler(this.SourceToolStripComboBox_SelectedIndexChanged);
             // 
             // tabControl
@@ -171,14 +173,16 @@
             this.tabControl.Controls.Add(this.FormTabPage);
             this.tabControl.Controls.Add(this.tabPageGrid);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl.Location = new System.Drawing.Point(0, 25);
+            this.tabControl.Location = new System.Drawing.Point(0, 28);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(522, 350);
+            this.tabControl.Size = new System.Drawing.Size(696, 434);
             this.tabControl.TabIndex = 1;
             // 
             // FormTabPage
             // 
+            this.FormTabPage.Controls.Add(this.UpdateButton);
             this.FormTabPage.Controls.Add(this.label4);
             this.FormTabPage.Controls.Add(this.GenderTextBox);
             this.FormTabPage.Controls.Add(this.label3);
@@ -188,10 +192,11 @@
             this.FormTabPage.Controls.Add(this.label1);
             this.FormTabPage.Controls.Add(this.NameTextBox);
             this.FormTabPage.Controls.Add(this.EmployeesListBox);
-            this.FormTabPage.Location = new System.Drawing.Point(4, 22);
+            this.FormTabPage.Location = new System.Drawing.Point(4, 25);
+            this.FormTabPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FormTabPage.Name = "FormTabPage";
-            this.FormTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.FormTabPage.Size = new System.Drawing.Size(514, 324);
+            this.FormTabPage.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormTabPage.Size = new System.Drawing.Size(688, 405);
             this.FormTabPage.TabIndex = 0;
             this.FormTabPage.Text = "Form";
             this.FormTabPage.UseVisualStyleBackColor = true;
@@ -199,84 +204,95 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(249, 134);
+            this.label4.Location = new System.Drawing.Point(332, 165);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 13);
+            this.label4.Size = new System.Drawing.Size(56, 17);
             this.label4.TabIndex = 6;
             this.label4.Text = "Gender";
             // 
             // GenderTextBox
             // 
-            this.GenderTextBox.Location = new System.Drawing.Point(297, 131);
+            this.GenderTextBox.Location = new System.Drawing.Point(396, 161);
+            this.GenderTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GenderTextBox.Name = "GenderTextBox";
-            this.GenderTextBox.Size = new System.Drawing.Size(192, 20);
+            this.GenderTextBox.Size = new System.Drawing.Size(255, 22);
             this.GenderTextBox.TabIndex = 7;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(262, 108);
+            this.label3.Location = new System.Drawing.Point(349, 133);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 13);
+            this.label3.Size = new System.Drawing.Size(37, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "Role";
             // 
             // RoleTextBox
             // 
-            this.RoleTextBox.Location = new System.Drawing.Point(297, 105);
+            this.RoleTextBox.Location = new System.Drawing.Point(396, 129);
+            this.RoleTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RoleTextBox.Name = "RoleTextBox";
-            this.RoleTextBox.Size = new System.Drawing.Size(192, 20);
+            this.RoleTextBox.Size = new System.Drawing.Size(255, 22);
             this.RoleTextBox.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(223, 81);
+            this.label2.Location = new System.Drawing.Point(297, 100);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 13);
+            this.label2.Size = new System.Drawing.Size(89, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Engineers ID";
             // 
             // EngineersIDTextBox
             // 
-            this.EngineersIDTextBox.Location = new System.Drawing.Point(297, 78);
+            this.EngineersIDTextBox.Location = new System.Drawing.Point(396, 96);
+            this.EngineersIDTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EngineersIDTextBox.Name = "EngineersIDTextBox";
             this.EngineersIDTextBox.ReadOnly = true;
-            this.EngineersIDTextBox.Size = new System.Drawing.Size(192, 20);
+            this.EngineersIDTextBox.Size = new System.Drawing.Size(255, 22);
             this.EngineersIDTextBox.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(256, 55);
+            this.label1.Location = new System.Drawing.Point(341, 68);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(45, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Name";
             // 
             // NameTextBox
             // 
-            this.NameTextBox.Location = new System.Drawing.Point(297, 52);
+            this.NameTextBox.Location = new System.Drawing.Point(396, 64);
+            this.NameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.ReadOnly = true;
-            this.NameTextBox.Size = new System.Drawing.Size(192, 20);
+            this.NameTextBox.Size = new System.Drawing.Size(255, 22);
             this.NameTextBox.TabIndex = 0;
             // 
             // EmployeesListBox
             // 
             this.EmployeesListBox.FormattingEnabled = true;
-            this.EmployeesListBox.Location = new System.Drawing.Point(8, 52);
+            this.EmployeesListBox.ItemHeight = 16;
+            this.EmployeesListBox.Location = new System.Drawing.Point(11, 64);
+            this.EmployeesListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EmployeesListBox.Name = "EmployeesListBox";
-            this.EmployeesListBox.Size = new System.Drawing.Size(169, 264);
+            this.EmployeesListBox.Size = new System.Drawing.Size(224, 324);
             this.EmployeesListBox.TabIndex = 4;
             // 
             // tabPageGrid
             // 
             this.tabPageGrid.Controls.Add(this.EmployeesDataGridView);
-            this.tabPageGrid.Location = new System.Drawing.Point(4, 22);
+            this.tabPageGrid.Location = new System.Drawing.Point(4, 25);
+            this.tabPageGrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPageGrid.Name = "tabPageGrid";
-            this.tabPageGrid.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageGrid.Size = new System.Drawing.Size(514, 324);
+            this.tabPageGrid.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageGrid.Size = new System.Drawing.Size(688, 402);
             this.tabPageGrid.TabIndex = 1;
             this.tabPageGrid.Text = "Grid";
             this.tabPageGrid.UseVisualStyleBackColor = true;
@@ -285,18 +301,31 @@
             // 
             this.EmployeesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EmployeesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.EmployeesDataGridView.Location = new System.Drawing.Point(3, 3);
+            this.EmployeesDataGridView.Location = new System.Drawing.Point(4, 4);
+            this.EmployeesDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EmployeesDataGridView.Name = "EmployeesDataGridView";
-            this.EmployeesDataGridView.Size = new System.Drawing.Size(508, 318);
+            this.EmployeesDataGridView.Size = new System.Drawing.Size(680, 394);
             this.EmployeesDataGridView.TabIndex = 0;
+            // 
+            // UpdateButton
+            // 
+            this.UpdateButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.UpdateButton.Location = new System.Drawing.Point(420, 235);
+            this.UpdateButton.Name = "UpdateButton";
+            this.UpdateButton.Size = new System.Drawing.Size(143, 56);
+            this.UpdateButton.TabIndex = 8;
+            this.UpdateButton.Text = "Update";
+            this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(522, 375);
+            this.ClientSize = new System.Drawing.Size(696, 462);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.toolStrip1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Weel of Fate - Amigo V2";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -339,6 +368,7 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripComboBox SourceToolStripComboBox;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.Button UpdateButton;
     }
 }
 

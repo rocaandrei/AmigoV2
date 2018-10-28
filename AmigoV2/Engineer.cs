@@ -22,5 +22,8 @@ namespace AmigoV2
             Gender = gender;
             ShiftDay = shift;
         }
+        public Engineer()
+        {
+        }
     }
 }

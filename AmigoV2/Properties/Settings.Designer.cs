@@ -26,8 +26,8 @@ namespace AmigoV2.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-49D4LU2J\\ANDREISQL;Initial Catalog=Engineers;Integrated Securi" +
-            "ty=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-G22DBJE\\MYSQLDB_AR;Initial Catalog=EngineersDB;Integrated Sec" +
+            "urity=True")]
         public string EngineerConnection {
             get {
                 return ((string)(this["EngineerConnection"]));
