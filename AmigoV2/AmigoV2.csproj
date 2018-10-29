@@ -60,6 +60,7 @@
     <Compile Include="AmigoApp.Designer.cs">
       <DependentUpon>AmigoApp.cs</DependentUpon>
     </Compile>
+    <Compile Include="ISchedule.cs" />
     <Compile Include="ISource.cs" />
     <Compile Include="ObjectSource.cs" />
     <Compile Include="Program.cs" />
