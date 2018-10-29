@@ -20,7 +20,12 @@ namespace AmigoV2
         {
             get
             {
-                return new Engineer(int.Parse(EngineersIDTBAddForm.Text), NameTBAddForm.Text, RoleTBAddForm.Text, GenderTBAddForm.Text, null);
+                return new Engineer()
+                {
+                    EngineerID = int.Parse(EngineersIDTBAddForm.Text),
+                    EngineerName = NameTBAddForm.Text,
+                    Gender = GenderTBAddForm.Text
+                };
             }
         }
     }
