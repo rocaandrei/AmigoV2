@@ -48,11 +48,11 @@ namespace AmigoV2
             {
                 DataTable table = _engineerDataSet.Tables["Engineers_tbl"];
 
-                var querry = from eng in table.AsEnumerable()
+                var query = from eng in table.AsEnumerable()
                              where eng.RowState != DataRowState.Deleted
                              where eng.Field<int>("EngineerID") == engineerID
                              select eng;
-                var singleEng = querry.Single();
+                var singleEng = query.Single();
                 //bidingSource.Remove(singleEng);
                 singleEng.Delete();
                 // Save();
@@ -67,9 +67,10 @@ namespace AmigoV2
 
         public void Save()
         {
+            string querySave = "SELECT * FROM Engineers_tbl";
             using (var sqlConnection = new SqlConnection(Settings.Default.EngineerConnection))
             {
-                _engineerDataAdapter = new SqlDataAdapter("SELECT * FROM Engineers_tbl", sqlConnection);
+                _engineerDataAdapter = new SqlDataAdapter(querySave, sqlConnection);
                 var builder = new SqlCommandBuilder(_engineerDataAdapter);
                 _engineerDataAdapter.Update(_engineerDataSet, "Engineers_tbl");
 
@@ -80,7 +81,19 @@ namespace AmigoV2
 
         public void Update(BindingSource bidingSource, Engineer engineer)
         {
-            throw new NotImplementedException();
+            var querryUpdate = $"UPDATE Engineers_tbl SET EngineerName = '{engineer.EngineerName}', EngineerRole = '{engineer.EngineerRole}', Gender = '{engineer.Gender}' WHERE EngineerID = {engineer.EngineerID}";
+            using (var sqlConnection = new SqlConnection(Settings.Default.EngineerConnection))
+            {
+                sqlConnection.Open();
+
+                SqlCommand command = new SqlCommand(querryUpdate, sqlConnection);
+                _engineerDataAdapter = new SqlDataAdapter();
+
+                _engineerDataAdapter.UpdateCommand = new SqlCommand(querryUpdate, sqlConnection);
+                _engineerDataAdapter.UpdateCommand.ExecuteNonQuery();
+
+                sqlConnection.Close();
+            }
         }
     }
 }
