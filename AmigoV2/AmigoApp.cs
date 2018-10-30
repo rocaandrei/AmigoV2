@@ -1,5 +1,6 @@
 ﻿using AmigoV2.Properties;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -28,7 +29,7 @@ namespace AmigoV2
             SourceToolStripComboBox.SelectedIndex = 0;//la initializare incepem cu Object source
             SetSource();
             BindEngieers();
-            _engineerBidingSource.DataSource = _currentSource.GetEngineers();
+         
             EmployeesListBox.DataSource = _engineerBidingSource;
 
             EmployeesListBox.ValueMember = "EngineerID";
@@ -59,7 +60,6 @@ namespace AmigoV2
         private void DeleteEngineer_Click(object sender, EventArgs e)
         {
             int engineerID = (int)EmployeesListBox.SelectedValue;
-            //_source.DeleteEngineer(engineer);
             _currentSource.DeleteEngineer(_engineerBidingSource, engineerID);
         }
 
@@ -85,7 +85,7 @@ namespace AmigoV2
         }
         private void BindEngieers()
         {
-            _engineerBidingSource.DataSource = _currentSource.GetEngineers();
+           _engineerBidingSource.DataSource = _currentSource.GetEngineers();
         }
 
         private void SetSource()
