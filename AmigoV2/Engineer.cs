@@ -12,7 +12,7 @@ namespace AmigoV2
         public string EngineerName { get; set; }
         public string EngineerRole { get; set; }
         public string Gender { get; set; }
-        public string ShiftDay { get; set; }
+     
 
         public Engineer(int id, string name, string role, string gender, string shift)
         {
@@ -20,7 +20,6 @@ namespace AmigoV2
             EngineerName = name;
             EngineerRole = role;
             Gender = gender;
-            ShiftDay = shift;
         }
         public Engineer()
         {

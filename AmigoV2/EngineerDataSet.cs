@@ -36,7 +36,7 @@ namespace AmigoV2
             newRow["EngineerName"] = engineer.EngineerName;
             newRow["EngineerRole"] = engineer.EngineerRole;
             newRow["Gender"] = engineer.Gender;
-            newRow["ShiftDay"] = engineer.ShiftDay;
+           
 
             table.Rows.Add(newRow);
 
@@ -86,10 +86,10 @@ namespace AmigoV2
             {
                 sqlConnection.Open();
 
-                SqlCommand command = new SqlCommand(querryUpdate, sqlConnection);//TO DO: Comment this line and test if will work without it.
+                SqlCommand updateCommand = new SqlCommand(querryUpdate, sqlConnection);
                 _engineerDataAdapter = new SqlDataAdapter();
 
-                _engineerDataAdapter.UpdateCommand = new SqlCommand(querryUpdate, sqlConnection);
+                _engineerDataAdapter.UpdateCommand = updateCommand;
                 _engineerDataAdapter.UpdateCommand.ExecuteNonQuery();
 
                 sqlConnection.Close();

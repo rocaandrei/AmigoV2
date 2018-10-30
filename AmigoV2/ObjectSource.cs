@@ -58,7 +58,6 @@ namespace AmigoV2
                     eng.EngineerName = updatedEngineer.EngineerName;
                     eng.EngineerRole = updatedEngineer.EngineerRole;
                     eng.Gender = updatedEngineer.Gender;
-                    eng.ShiftDay = updatedEngineer.ShiftDay;
                 }
             }
         }

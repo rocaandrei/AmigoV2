@@ -24,6 +24,7 @@ namespace AmigoV2
                 {
                     EngineerID = int.Parse(EngineersIDTBAddForm.Text),
                     EngineerName = NameTBAddForm.Text,
+                    EngineerRole = RoleTBAddForm.Text,
                     Gender = GenderTBAddForm.Text
                 };
             }
