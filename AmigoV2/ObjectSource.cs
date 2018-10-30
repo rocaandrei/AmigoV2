@@ -43,10 +43,9 @@ namespace AmigoV2
             bidingSource.Add(engineer);
 
         }
-        public void Save()
+        public void Save()//not aplicable
         {
             MessageBox.Show("Nu este cazul de Save() pentru ObjectSource pentru ca el ia obiectul venit din compilare", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //nu este cazul de implementare pentru ca la complilare vom avea aceleasi obiecte definite intial 
         }
 
         public void Update(BindingSource bidingSource, Engineer updatedEngineer)
