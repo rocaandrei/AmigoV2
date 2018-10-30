@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace AmigoV2
 {
-    public interface ISource// pentru ca vreau sa folosesc mai multe surse de date: obiecte si DB - DataSet
+    public interface ISource
     {
         object GetEngineers();
         void DeleteEngineer(BindingSource bidingSource, int engineerID);

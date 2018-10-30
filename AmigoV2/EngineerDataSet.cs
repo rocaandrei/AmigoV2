@@ -36,7 +36,7 @@ namespace AmigoV2
             newRow["EngineerName"] = engineer.EngineerName;
             newRow["EngineerRole"] = engineer.EngineerRole;
             newRow["Gender"] = engineer.Gender;
-           
+
 
             table.Rows.Add(newRow);
 
@@ -49,9 +49,9 @@ namespace AmigoV2
                 DataTable table = _engineerDataSet.Tables["Engineers_tbl"];
 
                 var query = from eng in table.AsEnumerable()
-                             where eng.RowState != DataRowState.Deleted
-                             where eng.Field<int>("EngineerID") == engineerID
-                             select eng;
+                            where eng.RowState != DataRowState.Deleted
+                            where eng.Field<int>("EngineerID") == engineerID
+                            select eng;
                 var singleEng = query.Single();
                 //bidingSource.Remove(singleEng);
                 singleEng.Delete();
@@ -71,7 +71,7 @@ namespace AmigoV2
             using (var sqlConnection = new SqlConnection(Settings.Default.EngineerConnection))
             {
                 _engineerDataAdapter = new SqlDataAdapter(querySave, sqlConnection);
-                var builder = new SqlCommandBuilder(_engineerDataAdapter);//TO DO: Test if will work without this line of code 
+                var builder = new SqlCommandBuilder(_engineerDataAdapter);//need this line to bulid my comands
                 _engineerDataAdapter.Update(_engineerDataSet, "Engineers_tbl");
 
                 sqlConnection.Close();
