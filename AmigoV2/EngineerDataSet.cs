@@ -71,7 +71,7 @@ namespace AmigoV2
             using (var sqlConnection = new SqlConnection(Settings.Default.EngineerConnection))
             {
                 _engineerDataAdapter = new SqlDataAdapter(querySave, sqlConnection);
-                var builder = new SqlCommandBuilder(_engineerDataAdapter);
+                var builder = new SqlCommandBuilder(_engineerDataAdapter);//TO DO: Test if will work without this line of code 
                 _engineerDataAdapter.Update(_engineerDataSet, "Engineers_tbl");
 
                 sqlConnection.Close();
@@ -86,7 +86,7 @@ namespace AmigoV2
             {
                 sqlConnection.Open();
 
-                SqlCommand command = new SqlCommand(querryUpdate, sqlConnection);
+                SqlCommand command = new SqlCommand(querryUpdate, sqlConnection);//TO DO: Comment this line and test if will work without it.
                 _engineerDataAdapter = new SqlDataAdapter();
 
                 _engineerDataAdapter.UpdateCommand = new SqlCommand(querryUpdate, sqlConnection);
