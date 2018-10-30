@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace AmigoV2
 {
-    public interface ISchedule
+    public enum Workdays
     {
-        void ShuffleEngineers();
-        void AddWorkdays();
-        void AddShifts();
-        void ShowSchedule();
     }
 }
