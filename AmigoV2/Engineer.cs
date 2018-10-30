@@ -14,7 +14,7 @@ namespace AmigoV2
         public string Gender { get; set; }
      
 
-        public Engineer(int id, string name, string role, string gender, string shift)
+        public Engineer(int id, string name, string role, string gender)
         {
             EngineerID = id;
             EngineerName = name;

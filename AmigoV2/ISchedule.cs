@@ -8,7 +8,7 @@ namespace AmigoV2
 {
     public interface ISchedule
     {
-        void ShuffleEngineers();
+        object ShuffleEngineers();
         void AddWorkdays();
         void AddShifts();
         void ShowSchedule();
