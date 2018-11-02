@@ -120,8 +120,22 @@ namespace AmigoV2
         private void ShowScheduleButton_Click(object sender, EventArgs e)
         {
             ShowSchedule theCalendar = new UI.ShowSchedule();
-            theCalendar.EngineersSource = _engineerBidingSource;
-            theCalendar.ShowDialog();
+
+            if (_objectSource != null)
+            {
+                var shuffleEng = new ObjectSource();
+                shuffleEng = _objectSource;
+
+                _engineerBidingSource.DataSource = shuffleEng.ShuffleEngineers();
+                theCalendar.EngineersSource = _engineerBidingSource;
+
+                theCalendar.ShowDialog();
+            }
+            else
+            {
+                //TO DO: aici sa fac shuffle din DataSetSource...
+            }
+           
         }
     }
 }
