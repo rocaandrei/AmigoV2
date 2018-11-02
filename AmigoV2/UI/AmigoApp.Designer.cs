@@ -87,7 +87,7 @@
             this.toolStripSeparator5});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(696, 28);
+            this.toolStrip1.Size = new System.Drawing.Size(999, 28);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -213,7 +213,7 @@
             this.tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(696, 434);
+            this.tabControl.Size = new System.Drawing.Size(999, 552);
             this.tabControl.TabIndex = 1;
             // 
             // FormTabPage
@@ -232,7 +232,7 @@
             this.FormTabPage.Margin = new System.Windows.Forms.Padding(4);
             this.FormTabPage.Name = "FormTabPage";
             this.FormTabPage.Padding = new System.Windows.Forms.Padding(4);
-            this.FormTabPage.Size = new System.Drawing.Size(688, 405);
+            this.FormTabPage.Size = new System.Drawing.Size(991, 523);
             this.FormTabPage.TabIndex = 0;
             this.FormTabPage.Text = "Form";
             this.FormTabPage.UseVisualStyleBackColor = true;
@@ -240,7 +240,7 @@
             // UpdateButton
             // 
             this.UpdateButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.UpdateButton.Location = new System.Drawing.Point(420, 235);
+            this.UpdateButton.Location = new System.Drawing.Point(412, 235);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(143, 56);
             this.UpdateButton.TabIndex = 8;
@@ -251,7 +251,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(332, 165);
+            this.label4.Location = new System.Drawing.Point(324, 165);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 17);
@@ -260,7 +260,7 @@
             // 
             // GenderTextBox
             // 
-            this.GenderTextBox.Location = new System.Drawing.Point(396, 161);
+            this.GenderTextBox.Location = new System.Drawing.Point(388, 161);
             this.GenderTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.GenderTextBox.Name = "GenderTextBox";
             this.GenderTextBox.Size = new System.Drawing.Size(255, 22);
@@ -269,7 +269,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(349, 133);
+            this.label3.Location = new System.Drawing.Point(341, 133);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 17);
@@ -278,7 +278,7 @@
             // 
             // RoleTextBox
             // 
-            this.RoleTextBox.Location = new System.Drawing.Point(396, 129);
+            this.RoleTextBox.Location = new System.Drawing.Point(388, 129);
             this.RoleTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.RoleTextBox.Name = "RoleTextBox";
             this.RoleTextBox.Size = new System.Drawing.Size(255, 22);
@@ -287,7 +287,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(297, 100);
+            this.label2.Location = new System.Drawing.Point(289, 100);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 17);
@@ -296,7 +296,7 @@
             // 
             // EngineersIDTextBox
             // 
-            this.EngineersIDTextBox.Location = new System.Drawing.Point(396, 96);
+            this.EngineersIDTextBox.Location = new System.Drawing.Point(388, 96);
             this.EngineersIDTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.EngineersIDTextBox.Name = "EngineersIDTextBox";
             this.EngineersIDTextBox.ReadOnly = true;
@@ -306,7 +306,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(341, 68);
+            this.label1.Location = new System.Drawing.Point(333, 68);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 17);
@@ -315,7 +315,7 @@
             // 
             // NameTextBox
             // 
-            this.NameTextBox.Location = new System.Drawing.Point(396, 64);
+            this.NameTextBox.Location = new System.Drawing.Point(388, 64);
             this.NameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.ReadOnly = true;
@@ -329,7 +329,7 @@
             this.EmployeesListBox.Location = new System.Drawing.Point(11, 64);
             this.EmployeesListBox.Margin = new System.Windows.Forms.Padding(4);
             this.EmployeesListBox.Name = "EmployeesListBox";
-            this.EmployeesListBox.Size = new System.Drawing.Size(224, 324);
+            this.EmployeesListBox.Size = new System.Drawing.Size(249, 452);
             this.EmployeesListBox.TabIndex = 4;
             // 
             // tabPageGrid
@@ -348,6 +348,7 @@
             // 
             this.EmployeesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EmployeesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EmployeesDataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
             this.EmployeesDataGridView.Location = new System.Drawing.Point(4, 4);
             this.EmployeesDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.EmployeesDataGridView.Name = "EmployeesDataGridView";
@@ -358,7 +359,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(696, 462);
+            this.ClientSize = new System.Drawing.Size(999, 580);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

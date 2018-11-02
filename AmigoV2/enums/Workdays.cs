@@ -8,6 +8,6 @@ namespace AmigoV2
 {
     public enum Workdays
     {
-        Luni = 1, Marti, Miercuri, Joi, Vineri
+        NotSet = 0, Luni = 1, Marti, Miercuri, Joi, Vineri
     }
 }

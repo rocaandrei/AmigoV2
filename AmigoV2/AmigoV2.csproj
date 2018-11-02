@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Schedule.cs" />
     <Compile Include="UI\AddNewEngineer.cs">
       <SubType>Form</SubType>
     </Compile>

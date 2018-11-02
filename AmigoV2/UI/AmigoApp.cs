@@ -31,6 +31,7 @@ namespace AmigoV2
 
             EmployeesListBox.ValueMember = "EngineerID";
             EmployeesListBox.DisplayMember = "EngineerName";
+           
             EmployeesDataGridView.DataSource = _engineerBidingSource;
 
             NameTextBox.DataBindings.Clear();
@@ -124,10 +125,10 @@ namespace AmigoV2
             if (_objectSource != null)
             {
                 var shuffleEng = new ObjectSource();
-                shuffleEng = _objectSource;
+                BindingSource _engineersShuffled = new BindingSource();
 
-                _engineerBidingSource.DataSource = shuffleEng.ShuffleEngineers();
-                theCalendar.EngineersSource = _engineerBidingSource;
+                _engineersShuffled.DataSource = shuffleEng.ShowSchedule();
+                theCalendar.EngineersSource = _engineersShuffled;
 
                 theCalendar.ShowDialog();
             }

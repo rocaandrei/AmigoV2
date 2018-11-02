@@ -44,7 +44,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(55, 133);
+            this.label4.Location = new System.Drawing.Point(53, 143);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 17);
@@ -53,7 +53,7 @@
             // 
             // GenderTBAddForm
             // 
-            this.GenderTBAddForm.Location = new System.Drawing.Point(119, 129);
+            this.GenderTBAddForm.Location = new System.Drawing.Point(117, 139);
             this.GenderTBAddForm.Margin = new System.Windows.Forms.Padding(4);
             this.GenderTBAddForm.Name = "GenderTBAddForm";
             this.GenderTBAddForm.Size = new System.Drawing.Size(177, 22);
@@ -62,7 +62,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(72, 101);
+            this.label3.Location = new System.Drawing.Point(70, 111);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 17);
@@ -71,7 +71,7 @@
             // 
             // RoleTBAddForm
             // 
-            this.RoleTBAddForm.Location = new System.Drawing.Point(119, 97);
+            this.RoleTBAddForm.Location = new System.Drawing.Point(117, 107);
             this.RoleTBAddForm.Margin = new System.Windows.Forms.Padding(4);
             this.RoleTBAddForm.Name = "RoleTBAddForm";
             this.RoleTBAddForm.Size = new System.Drawing.Size(177, 22);
@@ -80,7 +80,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 68);
+            this.label2.Location = new System.Drawing.Point(18, 78);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 17);
@@ -89,7 +89,7 @@
             // 
             // EngineersIDTBAddForm
             // 
-            this.EngineersIDTBAddForm.Location = new System.Drawing.Point(119, 64);
+            this.EngineersIDTBAddForm.Location = new System.Drawing.Point(117, 74);
             this.EngineersIDTBAddForm.Margin = new System.Windows.Forms.Padding(4);
             this.EngineersIDTBAddForm.Name = "EngineersIDTBAddForm";
             this.EngineersIDTBAddForm.Size = new System.Drawing.Size(177, 22);
@@ -98,7 +98,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(64, 36);
+            this.label1.Location = new System.Drawing.Point(62, 46);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 17);
@@ -107,7 +107,7 @@
             // 
             // NameTBAddForm
             // 
-            this.NameTBAddForm.Location = new System.Drawing.Point(119, 32);
+            this.NameTBAddForm.Location = new System.Drawing.Point(117, 42);
             this.NameTBAddForm.Margin = new System.Windows.Forms.Padding(4);
             this.NameTBAddForm.Name = "NameTBAddForm";
             this.NameTBAddForm.Size = new System.Drawing.Size(177, 22);
@@ -117,7 +117,7 @@
             // 
             this.AddButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.AddButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.AddButton.Location = new System.Drawing.Point(45, 177);
+            this.AddButton.Location = new System.Drawing.Point(43, 187);
             this.AddButton.Margin = new System.Windows.Forms.Padding(4);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(100, 28);
@@ -129,7 +129,7 @@
             // 
             this.CancelButton.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.CancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.CancelButton.Location = new System.Drawing.Point(216, 177);
+            this.CancelButton.Location = new System.Drawing.Point(214, 187);
             this.CancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(100, 28);
@@ -141,7 +141,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(335, 250);
+            this.ClientSize = new System.Drawing.Size(350, 260);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.label4);

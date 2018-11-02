@@ -8,6 +8,6 @@ namespace AmigoV2.enums
 {
     public enum Shift
     {
-        FirstShift = 1, SecondShift
+        NotSet = 0, FirstShift = 1, SecondShift
     }
 }
