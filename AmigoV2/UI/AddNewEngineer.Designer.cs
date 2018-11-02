@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddNewEngieer));
             this.label4 = new System.Windows.Forms.Label();
             this.GenderTBAddForm = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,7 +54,7 @@
             // GenderTBAddForm
             // 
             this.GenderTBAddForm.Location = new System.Drawing.Point(119, 129);
-            this.GenderTBAddForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GenderTBAddForm.Margin = new System.Windows.Forms.Padding(4);
             this.GenderTBAddForm.Name = "GenderTBAddForm";
             this.GenderTBAddForm.Size = new System.Drawing.Size(177, 22);
             this.GenderTBAddForm.TabIndex = 3;
@@ -71,7 +72,7 @@
             // RoleTBAddForm
             // 
             this.RoleTBAddForm.Location = new System.Drawing.Point(119, 97);
-            this.RoleTBAddForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RoleTBAddForm.Margin = new System.Windows.Forms.Padding(4);
             this.RoleTBAddForm.Name = "RoleTBAddForm";
             this.RoleTBAddForm.Size = new System.Drawing.Size(177, 22);
             this.RoleTBAddForm.TabIndex = 2;
@@ -89,7 +90,7 @@
             // EngineersIDTBAddForm
             // 
             this.EngineersIDTBAddForm.Location = new System.Drawing.Point(119, 64);
-            this.EngineersIDTBAddForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EngineersIDTBAddForm.Margin = new System.Windows.Forms.Padding(4);
             this.EngineersIDTBAddForm.Name = "EngineersIDTBAddForm";
             this.EngineersIDTBAddForm.Size = new System.Drawing.Size(177, 22);
             this.EngineersIDTBAddForm.TabIndex = 1;
@@ -107,7 +108,7 @@
             // NameTBAddForm
             // 
             this.NameTBAddForm.Location = new System.Drawing.Point(119, 32);
-            this.NameTBAddForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.NameTBAddForm.Margin = new System.Windows.Forms.Padding(4);
             this.NameTBAddForm.Name = "NameTBAddForm";
             this.NameTBAddForm.Size = new System.Drawing.Size(177, 22);
             this.NameTBAddForm.TabIndex = 0;
@@ -117,7 +118,7 @@
             this.AddButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.AddButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.AddButton.Location = new System.Drawing.Point(45, 177);
-            this.AddButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddButton.Margin = new System.Windows.Forms.Padding(4);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(100, 28);
             this.AddButton.TabIndex = 4;
@@ -129,7 +130,7 @@
             this.CancelButton.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.CancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CancelButton.Location = new System.Drawing.Point(216, 177);
-            this.CancelButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(100, 28);
             this.CancelButton.TabIndex = 5;
@@ -152,7 +153,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.NameTBAddForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddNewEngieer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add Engineer";

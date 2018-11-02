@@ -1,8 +1,5 @@
-﻿using AmigoV2.Properties;
+﻿using AmigoV2.UI;
 using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace AmigoV2
@@ -119,6 +116,16 @@ namespace AmigoV2
             };
             _currentSource.Update(_engineerBidingSource, updatedEng);
         }
-    }
 
+        private void ShowScheduleButton_Click(object sender, EventArgs e)
+        {
+            ShowSchedule theCalendar = new UI.ShowSchedule();
+            theCalendar.ShowDialog();
+        }
+
+        private void EmployeesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+    }
 }

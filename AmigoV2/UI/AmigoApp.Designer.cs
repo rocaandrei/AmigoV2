@@ -41,8 +41,13 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.SourceToolStripComboBox = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.ShowScheduleButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.FormTabPage = new System.Windows.Forms.TabPage();
+            this.UpdateButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.GenderTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,7 +59,6 @@
             this.EmployeesListBox = new System.Windows.Forms.ListBox();
             this.tabPageGrid = new System.Windows.Forms.TabPage();
             this.EmployeesDataGridView = new System.Windows.Forms.DataGridView();
-            this.UpdateButton = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.FormTabPage.SuspendLayout();
@@ -76,7 +80,11 @@
             this.toolStripLabel1,
             this.toolStripSeparator3,
             this.toolStripLabel2,
-            this.SourceToolStripComboBox});
+            this.SourceToolStripComboBox,
+            this.toolStripSeparator4,
+            this.toolStripLabel3,
+            this.ShowScheduleButton,
+            this.toolStripSeparator5});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(696, 28);
@@ -168,13 +176,41 @@
             this.SourceToolStripComboBox.Size = new System.Drawing.Size(160, 28);
             this.SourceToolStripComboBox.SelectedIndexChanged += new System.EventHandler(this.SourceToolStripComboBox_SelectedIndexChanged);
             // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 28);
+            // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel3.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(136, 25);
+            this.toolStripLabel3.Text = "SHOW SCHEDULE:";
+            // 
+            // ShowScheduleButton
+            // 
+            this.ShowScheduleButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ShowScheduleButton.Image = ((System.Drawing.Image)(resources.GetObject("ShowScheduleButton.Image")));
+            this.ShowScheduleButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ShowScheduleButton.Name = "ShowScheduleButton";
+            this.ShowScheduleButton.Size = new System.Drawing.Size(24, 25);
+            this.ShowScheduleButton.Text = "Show Schedule";
+            this.ShowScheduleButton.Click += new System.EventHandler(this.ShowScheduleButton_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 28);
+            // 
             // tabControl
             // 
             this.tabControl.Controls.Add(this.FormTabPage);
             this.tabControl.Controls.Add(this.tabPageGrid);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Location = new System.Drawing.Point(0, 28);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(696, 434);
@@ -193,13 +229,24 @@
             this.FormTabPage.Controls.Add(this.NameTextBox);
             this.FormTabPage.Controls.Add(this.EmployeesListBox);
             this.FormTabPage.Location = new System.Drawing.Point(4, 25);
-            this.FormTabPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormTabPage.Margin = new System.Windows.Forms.Padding(4);
             this.FormTabPage.Name = "FormTabPage";
-            this.FormTabPage.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormTabPage.Padding = new System.Windows.Forms.Padding(4);
             this.FormTabPage.Size = new System.Drawing.Size(688, 405);
             this.FormTabPage.TabIndex = 0;
             this.FormTabPage.Text = "Form";
             this.FormTabPage.UseVisualStyleBackColor = true;
+            // 
+            // UpdateButton
+            // 
+            this.UpdateButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.UpdateButton.Location = new System.Drawing.Point(420, 235);
+            this.UpdateButton.Name = "UpdateButton";
+            this.UpdateButton.Size = new System.Drawing.Size(143, 56);
+            this.UpdateButton.TabIndex = 8;
+            this.UpdateButton.Text = "Update";
+            this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // label4
             // 
@@ -214,7 +261,7 @@
             // GenderTextBox
             // 
             this.GenderTextBox.Location = new System.Drawing.Point(396, 161);
-            this.GenderTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GenderTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.GenderTextBox.Name = "GenderTextBox";
             this.GenderTextBox.Size = new System.Drawing.Size(255, 22);
             this.GenderTextBox.TabIndex = 7;
@@ -232,7 +279,7 @@
             // RoleTextBox
             // 
             this.RoleTextBox.Location = new System.Drawing.Point(396, 129);
-            this.RoleTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RoleTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.RoleTextBox.Name = "RoleTextBox";
             this.RoleTextBox.Size = new System.Drawing.Size(255, 22);
             this.RoleTextBox.TabIndex = 4;
@@ -250,7 +297,7 @@
             // EngineersIDTextBox
             // 
             this.EngineersIDTextBox.Location = new System.Drawing.Point(396, 96);
-            this.EngineersIDTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EngineersIDTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.EngineersIDTextBox.Name = "EngineersIDTextBox";
             this.EngineersIDTextBox.ReadOnly = true;
             this.EngineersIDTextBox.Size = new System.Drawing.Size(255, 22);
@@ -269,7 +316,7 @@
             // NameTextBox
             // 
             this.NameTextBox.Location = new System.Drawing.Point(396, 64);
-            this.NameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.NameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.ReadOnly = true;
             this.NameTextBox.Size = new System.Drawing.Size(255, 22);
@@ -280,7 +327,7 @@
             this.EmployeesListBox.FormattingEnabled = true;
             this.EmployeesListBox.ItemHeight = 16;
             this.EmployeesListBox.Location = new System.Drawing.Point(11, 64);
-            this.EmployeesListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EmployeesListBox.Margin = new System.Windows.Forms.Padding(4);
             this.EmployeesListBox.Name = "EmployeesListBox";
             this.EmployeesListBox.Size = new System.Drawing.Size(224, 324);
             this.EmployeesListBox.TabIndex = 4;
@@ -289,10 +336,10 @@
             // 
             this.tabPageGrid.Controls.Add(this.EmployeesDataGridView);
             this.tabPageGrid.Location = new System.Drawing.Point(4, 25);
-            this.tabPageGrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageGrid.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageGrid.Name = "tabPageGrid";
-            this.tabPageGrid.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPageGrid.Size = new System.Drawing.Size(688, 402);
+            this.tabPageGrid.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPageGrid.Size = new System.Drawing.Size(688, 405);
             this.tabPageGrid.TabIndex = 1;
             this.tabPageGrid.Text = "Grid";
             this.tabPageGrid.UseVisualStyleBackColor = true;
@@ -302,31 +349,22 @@
             this.EmployeesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EmployeesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EmployeesDataGridView.Location = new System.Drawing.Point(4, 4);
-            this.EmployeesDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EmployeesDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.EmployeesDataGridView.Name = "EmployeesDataGridView";
-            this.EmployeesDataGridView.Size = new System.Drawing.Size(680, 394);
+            this.EmployeesDataGridView.Size = new System.Drawing.Size(680, 397);
             this.EmployeesDataGridView.TabIndex = 0;
+            this.EmployeesDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmployeesDataGridView_CellContentClick);
             // 
-            // UpdateButton
-            // 
-            this.UpdateButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.UpdateButton.Location = new System.Drawing.Point(420, 235);
-            this.UpdateButton.Name = "UpdateButton";
-            this.UpdateButton.Size = new System.Drawing.Size(143, 56);
-            this.UpdateButton.TabIndex = 8;
-            this.UpdateButton.Text = "Update";
-            this.UpdateButton.UseVisualStyleBackColor = true;
-            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
-            // 
-            // Form1
+            // AmigoApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(696, 462);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "AmigoApp";
             this.Text = "Weel of Fate - Amigo V2";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.toolStrip1.ResumeLayout(false);
@@ -369,6 +407,10 @@
         private System.Windows.Forms.ToolStripComboBox SourceToolStripComboBox;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.Button UpdateButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripButton ShowScheduleButton;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
     }
 }
 
