@@ -30,7 +30,7 @@ namespace AmigoV2
                         Gender = GenderTBAddForm.Text
                     };
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     MessageBox.Show("Eroare datele nu au fost introduse corect","Eroare",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     return new Engineer();

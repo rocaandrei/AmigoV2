@@ -16,5 +16,19 @@ namespace AmigoV2.UI
         {
             InitializeComponent();
         }
+        private BindingSource _engineersSource = new BindingSource();
+
+        public BindingSource EngineersSource
+        {
+            set
+            {
+                _engineersSource = value;
+            }
+        }
+
+        private void ShowSchedule_Load(object sender, EventArgs e)
+        {
+            ScheduleEngineersDataGridView.DataSource = _engineersSource;
+        }
     }
 }

@@ -353,7 +353,6 @@
             this.EmployeesDataGridView.Name = "EmployeesDataGridView";
             this.EmployeesDataGridView.Size = new System.Drawing.Size(680, 397);
             this.EmployeesDataGridView.TabIndex = 0;
-            this.EmployeesDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmployeesDataGridView_CellContentClick);
             // 
             // AmigoApp
             // 

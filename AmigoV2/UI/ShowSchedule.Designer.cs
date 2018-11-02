@@ -32,10 +32,10 @@
             this.ScheduleTabControl = new System.Windows.Forms.TabControl();
             this.CalendarTabPage = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ScheduleEngineersDataGridView = new System.Windows.Forms.DataGridView();
             this.ScheduleTabControl.SuspendLayout();
             this.CalendarTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ScheduleEngineersDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // ScheduleTabControl
@@ -51,7 +51,7 @@
             // 
             // CalendarTabPage
             // 
-            this.CalendarTabPage.Controls.Add(this.dataGridView1);
+            this.CalendarTabPage.Controls.Add(this.ScheduleEngineersDataGridView);
             this.CalendarTabPage.Location = new System.Drawing.Point(4, 25);
             this.CalendarTabPage.Name = "CalendarTabPage";
             this.CalendarTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -70,15 +70,15 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // ScheduleEngineersDataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(744, 440);
-            this.dataGridView1.TabIndex = 0;
+            this.ScheduleEngineersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ScheduleEngineersDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ScheduleEngineersDataGridView.Location = new System.Drawing.Point(3, 3);
+            this.ScheduleEngineersDataGridView.Name = "ScheduleEngineersDataGridView";
+            this.ScheduleEngineersDataGridView.RowTemplate.Height = 24;
+            this.ScheduleEngineersDataGridView.Size = new System.Drawing.Size(744, 440);
+            this.ScheduleEngineersDataGridView.TabIndex = 0;
             // 
             // ShowSchedule
             // 
@@ -89,9 +89,10 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ShowSchedule";
             this.Text = "Schedule";
+            this.Load += new System.EventHandler(this.ShowSchedule_Load);
             this.ScheduleTabControl.ResumeLayout(false);
             this.CalendarTabPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ScheduleEngineersDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -101,6 +102,6 @@
         private System.Windows.Forms.TabControl ScheduleTabControl;
         private System.Windows.Forms.TabPage CalendarTabPage;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView ScheduleEngineersDataGridView;
     }
 }

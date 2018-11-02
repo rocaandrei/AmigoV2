@@ -50,7 +50,7 @@ namespace AmigoV2
             if (result == DialogResult.OK)
             {
                 var engineers = _engineerBidingSource;
-                _currentSource.AddEngineer(_engineerBidingSource, form.Engineer);
+                _currentSource.AddEngineer(engineers, form.Engineer);
             }
         }
 
@@ -120,12 +120,8 @@ namespace AmigoV2
         private void ShowScheduleButton_Click(object sender, EventArgs e)
         {
             ShowSchedule theCalendar = new UI.ShowSchedule();
+            theCalendar.EngineersSource = _engineerBidingSource;
             theCalendar.ShowDialog();
-        }
-
-        private void EmployeesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }
