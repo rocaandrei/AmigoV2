@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using AmigoV2.Properties;
 using System.Linq;
 using System;
+using System.Collections.Generic;
 
 namespace AmigoV2
 {
@@ -11,6 +12,8 @@ namespace AmigoV2
     {
         DataSet _engineerDataSet;
         SqlDataAdapter _engineerDataAdapter;
+        SqlDataAdapter _shuffledEngineersDataAdapter;
+
         int nextID = int.MaxValue;
 
         public EngineerDataSet()
@@ -94,6 +97,48 @@ namespace AmigoV2
 
                 sqlConnection.Close();
             }
+        }
+
+        public object ShuffleEngineers()
+        {
+            var table = _engineerDataSet.Tables["Engineers_tbl"];
+
+          
+
+            SqlConnection connectionString = new SqlConnection(Settings.Default.EngineerConnection);
+            _shuffledEngineersDataAdapter = new SqlDataAdapter("SELECT * FROM Shuffeld_Engineers_tbl", connectionString);
+            var builder = new SqlCommandBuilder(_shuffledEngineersDataAdapter);
+            _shuffledEngineersDataAdapter.Fill(_engineerDataSet, "Shuffeld_Engineers_tbl");
+         
+
+            var table2 = _engineerDataSet.Tables["Shuffeld_Engineers_tbl"];
+            var item = table2.NewRow();
+            item = table.Rows[1];
+            table2.Rows.Add(item);//TO DO: aquers an error when I try to copy a row from another table 
+
+            _shuffledEngineersDataAdapter.Update(_engineerDataSet, "Shuffeld_Engineers_tbl");
+            connectionString.Dispose();
+            connectionString.Close();
+            return null;
+
+
+
+        }
+
+        public object AddWorkdays()
+        {
+            throw new NotImplementedException();
+        }
+
+        public object AddShifts()
+        {
+            throw new NotImplementedException();
+        }
+
+        public object ShowSchedule()
+        {
+            ShuffleEngineers();
+            return null;
         }
     }
 }

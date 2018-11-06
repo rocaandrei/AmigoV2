@@ -33,7 +33,7 @@ namespace AmigoV2
                 catch (Exception)
                 {
                     MessageBox.Show("Eroare datele nu au fost introduse corect","Eroare",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                    return new Engineer();
+                    return new Engineer { EngineerID = 1999, EngineerName = "ERROR", Gender = "ERROR", EngineerRole = "ERROR" };
                 }
             }
         }

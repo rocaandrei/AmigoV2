@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace AmigoV2
 {
-    public interface ISource
+    public interface ISource : ISchedule
     {
         object GetEngineers();
         void DeleteEngineer(BindingSource bidingSource, int engineerID);

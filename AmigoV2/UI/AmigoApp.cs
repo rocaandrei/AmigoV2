@@ -122,19 +122,19 @@ namespace AmigoV2
         {
             ShowSchedule theCalendar = new UI.ShowSchedule();
 
-            if (_objectSource != null)
+            if (_currentSource != null)
             {
-                var shuffleEng = new ObjectSource();
-                BindingSource _engineersShuffled = new BindingSource();
+              
+                BindingSource _scheduledEngineers = new BindingSource();
 
-                _engineersShuffled.DataSource = shuffleEng.ShowSchedule();
-                theCalendar.EngineersSource = _engineersShuffled;
+                _scheduledEngineers.DataSource = _currentSource.ShowSchedule();
+                theCalendar.EngineersSource = _scheduledEngineers;
 
                 theCalendar.ShowDialog();
             }
             else
             {
-                //TO DO: aici sa fac shuffle din DataSetSource...
+                MessageBox.Show("Error check code.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
            
         }

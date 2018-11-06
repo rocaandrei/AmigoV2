@@ -39,6 +39,7 @@ namespace AmigoV2
                          where eng.EngineerID == engineerID
                          select eng;
             var engineer = querry.Single();
+            _engineers.Remove(engineer);
             bidingSource.Remove(engineer);
         }
         public void AddEngineer(BindingSource bidingSource, Engineer engineer)
@@ -52,6 +53,7 @@ namespace AmigoV2
                 }
             }
             engineer.EngineerID = nextId;
+            _engineers.Add(engineer);
             bidingSource.Add(engineer);
 
         }
