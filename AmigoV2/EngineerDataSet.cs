@@ -82,20 +82,24 @@ namespace AmigoV2
             MessageBox.Show("Options saved!", "Saved!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public void Update(BindingSource bidingSource, Engineer engineer)//TO DO: to avoid SQL injection atack: https://www.youtube.com/watch?v=QKhHkEmv3Kw
+        public void Update(BindingSource bidingSource, Engineer engineer)//TO DO: to avoid SQL injection attack: https://www.youtube.com/watch?v=QKhHkEmv3Kw
         {
             var querryUpdate = $"UPDATE Engineers_tbl SET EngineerName = '{engineer.EngineerName}', EngineerRole = '{engineer.EngineerRole}', Gender = '{engineer.Gender}' WHERE EngineerID = {engineer.EngineerID}";
+            var querryUpdate2 = $"UPDATE Engineers_tbl SET EngineerName = @EngineerName, EngineerRole = @EngineerRole, Gender = @Gender WHERE EngineerID = {engineer.EngineerID}";
+            
             using (var sqlConnection = new SqlConnection(Settings.Default.EngineerConnection))
             {
                 sqlConnection.Open();
 
-                SqlCommand updateCommand = new SqlCommand(querryUpdate, sqlConnection);
+                SqlCommand updateCommand = new SqlCommand(querryUpdate2, sqlConnection);
+                
+                updateCommand.Parameters.AddWithValue("@EngineerName",engineer.EngineerName);
+                 updateCommand.Parameters.AddWithValue("@EngineerRole",engineer.EngineerRole);
+                 updateCommand.Parameters.AddWithValue("@Gender",engineer.Gender);
+                
                 _engineerDataAdapter = new SqlDataAdapter();
-
                 _engineerDataAdapter.UpdateCommand = updateCommand;
-                _engineerDataAdapter.UpdateCommand.ExecuteNonQuery();
-
-                sqlConnection.Close();
+                _engineerDataAdapter.UpdateCommand.ExecuteNonQueryble();
             }
         }
 
