@@ -5,6 +5,7 @@ using AmigoV2.Properties;
 using System.Linq;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 
 namespace AmigoV2
 {
@@ -20,12 +21,16 @@ namespace AmigoV2
         {
             _engineerDataSet = new DataSet();
 
-            SqlConnection connectionString = new SqlConnection(Settings.Default.EngineerConnection);
-            _engineerDataAdapter = new SqlDataAdapter("SELECT * FROM Engineers_tbl", connectionString);
-            var builder = new SqlCommandBuilder(_engineerDataAdapter);
-            _engineerDataAdapter.Fill(_engineerDataSet, "Engineers_tbl");
-            connectionString.Dispose();
-            connectionString.Close();
+            //o alta varinata de a te conecta la connections string
+            var EngineerConnection = ConfigurationManager.ConnectionStrings["EngineerConnection"].ConnectionString;
+            using (SqlConnection connectionString = new SqlConnection(EngineerConnection))
+            {
+                _engineerDataAdapter = new SqlDataAdapter("SELECT * FROM Engineers_tbl", connectionString);
+                var builder = new SqlCommandBuilder(_engineerDataAdapter);
+                _engineerDataAdapter.Fill(_engineerDataSet, "Engineers_tbl");
+                connectionString.Dispose();
+                connectionString.Close();
+            }
 
         }
         public void AddEngineer(BindingSource bidingSource, Engineer engineer)
@@ -40,9 +45,7 @@ namespace AmigoV2
             newRow["EngineerRole"] = engineer.EngineerRole;
             newRow["Gender"] = engineer.Gender;
 
-
             table.Rows.Add(newRow);
-
         }
 
         public void DeleteEngineer(BindingSource bidingSource, int engineerID)
@@ -84,22 +87,21 @@ namespace AmigoV2
 
         public void Update(BindingSource bidingSource, Engineer engineer)//TO DO: to avoid SQL injection attack: https://www.youtube.com/watch?v=QKhHkEmv3Kw
         {
-            var querryUpdate = $"UPDATE Engineers_tbl SET EngineerName = '{engineer.EngineerName}', EngineerRole = '{engineer.EngineerRole}', Gender = '{engineer.Gender}' WHERE EngineerID = {engineer.EngineerID}";
-            var querryUpdate2 = $"UPDATE Engineers_tbl SET EngineerName = @EngineerName, EngineerRole = @EngineerRole, Gender = @Gender WHERE EngineerID = {engineer.EngineerID}";
-            
+            var querryUpdate = $"UPDATE Engineers_tbl SET EngineerName = @EngineerName, EngineerRole = @EngineerRole, Gender = @Gender WHERE EngineerID = {engineer.EngineerID}";
+
             using (var sqlConnection = new SqlConnection(Settings.Default.EngineerConnection))
             {
                 sqlConnection.Open();
 
-                SqlCommand updateCommand = new SqlCommand(querryUpdate2, sqlConnection);
-                
-                updateCommand.Parameters.AddWithValue("@EngineerName",engineer.EngineerName);
-                 updateCommand.Parameters.AddWithValue("@EngineerRole",engineer.EngineerRole);
-                 updateCommand.Parameters.AddWithValue("@Gender",engineer.Gender);
-                
+                SqlCommand updateCommand = new SqlCommand(querryUpdate, sqlConnection);
+
+                updateCommand.Parameters.AddWithValue("@EngineerName", engineer.EngineerName);
+                updateCommand.Parameters.AddWithValue("@EngineerRole", engineer.EngineerRole);
+                updateCommand.Parameters.AddWithValue("@Gender", engineer.Gender);
+
                 _engineerDataAdapter = new SqlDataAdapter();
                 _engineerDataAdapter.UpdateCommand = updateCommand;
-                _engineerDataAdapter.UpdateCommand.ExecuteNonQueryble();
+                _engineerDataAdapter.UpdateCommand.ExecuteNonQuery();
             }
         }
 
@@ -107,13 +109,13 @@ namespace AmigoV2
         {
             var table = _engineerDataSet.Tables["Engineers_tbl"];
 
-          
+
 
             SqlConnection connectionString = new SqlConnection(Settings.Default.EngineerConnection);
             _shuffledEngineersDataAdapter = new SqlDataAdapter("SELECT * FROM Shuffeld_Engineers_tbl", connectionString);
             var builder = new SqlCommandBuilder(_shuffledEngineersDataAdapter);
             _shuffledEngineersDataAdapter.Fill(_engineerDataSet, "Shuffeld_Engineers_tbl");
-         
+
 
             var table2 = _engineerDataSet.Tables["Shuffeld_Engineers_tbl"];
             var item = table2.NewRow();
@@ -124,8 +126,6 @@ namespace AmigoV2
             connectionString.Dispose();
             connectionString.Close();
             return null;
-
-
 
         }
 

@@ -14,7 +14,6 @@ namespace AmigoV2
         /// biding source-urile astea de mai jos imi face ca informatia sa fie fie legata in diferite forme 
         /// </summary>
         /// 
-
         private BindingSource _engineerBidingSource = new BindingSource();
 
         private ISource _currentSource;
