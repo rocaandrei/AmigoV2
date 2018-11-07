@@ -82,7 +82,7 @@ namespace AmigoV2
             MessageBox.Show("Options saved!", "Saved!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public void Update(BindingSource bidingSource, Engineer engineer)
+        public void Update(BindingSource bidingSource, Engineer engineer)//TO DO: to avoid SQL injection atack: https://www.youtube.com/watch?v=QKhHkEmv3Kw
         {
             var querryUpdate = $"UPDATE Engineers_tbl SET EngineerName = '{engineer.EngineerName}', EngineerRole = '{engineer.EngineerRole}', Gender = '{engineer.Gender}' WHERE EngineerID = {engineer.EngineerID}";
             using (var sqlConnection = new SqlConnection(Settings.Default.EngineerConnection))
