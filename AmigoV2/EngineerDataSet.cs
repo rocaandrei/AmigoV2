@@ -13,9 +13,9 @@ namespace AmigoV2
     {
         DataSet _engineerDataSet;
         SqlDataAdapter _engineerDataAdapter;
-        SqlDataAdapter _shuffledEngineersDataAdapter;
 
-        int nextID = int.MaxValue;
+        int temporaryID = int.MaxValue;
+        Random randomNo = new Random();
 
         public EngineerDataSet()
         {
@@ -26,10 +26,10 @@ namespace AmigoV2
             using (SqlConnection connectionString = new SqlConnection(EngineerConnection))
             {
                 _engineerDataAdapter = new SqlDataAdapter("SELECT * FROM Engineers_tbl", connectionString);
+                connectionString.Open();
                 var builder = new SqlCommandBuilder(_engineerDataAdapter);
                 _engineerDataAdapter.Fill(_engineerDataSet, "Engineers_tbl");
-                connectionString.Dispose();
-                connectionString.Close();
+              
             }
 
         }
@@ -37,10 +37,10 @@ namespace AmigoV2
         {
             DataTable table = _engineerDataSet.Tables["Engineers_tbl"];
 
-            nextID -= 1;
+            temporaryID -= 1;
             var newRow = table.NewRow();
 
-            newRow["EngineerID"] = nextID;
+            newRow["EngineerID"] = temporaryID;
             newRow["EngineerName"] = engineer.EngineerName;
             newRow["EngineerRole"] = engineer.EngineerRole;
             newRow["Gender"] = engineer.Gender;
@@ -59,9 +59,10 @@ namespace AmigoV2
                             where eng.Field<int>("EngineerID") == engineerID
                             select eng;
                 var singleEng = query.Single();
+
+                connectionString.Open();
                 //bidingSource.Remove(singleEng);
                 singleEng.Delete();
-                // Save();
             }
         }
 
@@ -74,18 +75,17 @@ namespace AmigoV2
         public void Save()
         {
             string querySave = "SELECT * FROM Engineers_tbl";
-            using (var sqlConnection = new SqlConnection(Settings.Default.EngineerConnection))
+            using (var connectionString = new SqlConnection(Settings.Default.EngineerConnection))
             {
-                _engineerDataAdapter = new SqlDataAdapter(querySave, sqlConnection);
+                _engineerDataAdapter = new SqlDataAdapter(querySave, connectionString);
                 var builder = new SqlCommandBuilder(_engineerDataAdapter);//need this line to bulid my comands
+                connectionString.Open();
                 _engineerDataAdapter.Update(_engineerDataSet, "Engineers_tbl");
-
-                sqlConnection.Close();
             }
             MessageBox.Show("Options saved!", "Saved!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public void Update(BindingSource bidingSource, Engineer engineer)//TO DO: to avoid SQL injection attack: https://www.youtube.com/watch?v=QKhHkEmv3Kw
+        public void Update(BindingSource bidingSource, Engineer engineer)
         {
             var querryUpdate = $"UPDATE Engineers_tbl SET EngineerName = @EngineerName, EngineerRole = @EngineerRole, Gender = @Gender WHERE EngineerID = {engineer.EngineerID}";
 
@@ -94,7 +94,7 @@ namespace AmigoV2
                 sqlConnection.Open();
 
                 SqlCommand updateCommand = new SqlCommand(querryUpdate, sqlConnection);
-
+                //this is to avoid SQL Inject Attack
                 updateCommand.Parameters.AddWithValue("@EngineerName", engineer.EngineerName);
                 updateCommand.Parameters.AddWithValue("@EngineerRole", engineer.EngineerRole);
                 updateCommand.Parameters.AddWithValue("@Gender", engineer.Gender);
@@ -103,30 +103,23 @@ namespace AmigoV2
                 _engineerDataAdapter.UpdateCommand = updateCommand;
                 _engineerDataAdapter.UpdateCommand.ExecuteNonQuery();
             }
+
         }
 
         public object ShuffleEngineers()
         {
-            var table = _engineerDataSet.Tables["Engineers_tbl"];
+           
+
+            using (var connection = new SqlConnection(Settings.Default.EngineerConnection))
+            {
+                var _shuffleDataAdapter = new SqlDataAdapter("SELECT * FROM Shuffeld_Engineers_tbl ",connection);
+                _shuffleDataAdapter.Fill(_engineerDataSet, "Shuffeld_Engineers_tbl");
+            }
+            DataTable shuffleTable = _engineerDataSet.Tables["Shuffeld_Engineers_tbl"];
 
 
 
-            SqlConnection connectionString = new SqlConnection(Settings.Default.EngineerConnection);
-            _shuffledEngineersDataAdapter = new SqlDataAdapter("SELECT * FROM Shuffeld_Engineers_tbl", connectionString);
-            var builder = new SqlCommandBuilder(_shuffledEngineersDataAdapter);
-            _shuffledEngineersDataAdapter.Fill(_engineerDataSet, "Shuffeld_Engineers_tbl");
-
-
-            var table2 = _engineerDataSet.Tables["Shuffeld_Engineers_tbl"];
-            var item = table2.NewRow();
-            item = table.Rows[1];
-            table2.Rows.Add(item);//TO DO: aquers an error when I try to copy a row from another table 
-
-            _shuffledEngineersDataAdapter.Update(_engineerDataSet, "Shuffeld_Engineers_tbl");
-            connectionString.Dispose();
-            connectionString.Close();
-            return null;
-
+            return shuffleTable;
         }
 
         public object AddWorkdays()
@@ -141,8 +134,8 @@ namespace AmigoV2
 
         public object ShowSchedule()
         {
-            ShuffleEngineers();
-            return null;
+            return ShuffleEngineers();
+           
         }
     }
 }
