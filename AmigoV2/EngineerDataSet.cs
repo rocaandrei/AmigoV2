@@ -126,6 +126,11 @@ namespace AmigoV2
             connectionString.Dispose();
             connectionString.Close();
             return null;
+            
+            //cred ca o sa initializes tot in constructor si tabelul de ShuffledEng si o sa ii populez cu codul asta:
+            /*foreach (DataRow dr in dataTable1.Rows) {
+               if (/* some condition */)
+                dataTable2.Rows.Add(dr.ItemArray);*/
 
         }
 
