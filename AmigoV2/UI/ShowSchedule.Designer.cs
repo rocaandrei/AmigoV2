@@ -73,11 +73,10 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ScheduleEngineersDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.ScheduleEngineersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ScheduleEngineersDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ScheduleEngineersDataGridView.Location = new System.Drawing.Point(3, 3);
             this.ScheduleEngineersDataGridView.Name = "ScheduleEngineersDataGridView";
             this.ScheduleEngineersDataGridView.RowTemplate.Height = 24;
-            this.ScheduleEngineersDataGridView.Size = new System.Drawing.Size(1011, 540);
+            this.ScheduleEngineersDataGridView.Size = new System.Drawing.Size(1011, 350);
             this.ScheduleEngineersDataGridView.TabIndex = 0;
             // 
             // tabPage2
@@ -85,7 +84,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(750, 446);
+            this.tabPage2.Size = new System.Drawing.Size(1017, 546);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;

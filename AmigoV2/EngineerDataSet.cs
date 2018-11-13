@@ -15,7 +15,8 @@ namespace AmigoV2
         SqlDataAdapter _engineerDataAdapter;
         SqlDataAdapter _shuffledEngineersDataAdapter;
 
-        int nextID = int.MaxValue;
+        int temporaryID = int.MaxValue;
+        Random random = new Random();
 
         public EngineerDataSet()
         {
@@ -25,14 +26,25 @@ namespace AmigoV2
             var EngineerConnection = ConfigurationManager.ConnectionStrings["EngineerConnection"].ConnectionString;
             using (SqlConnection connectionString = new SqlConnection(EngineerConnection))
             {
-                _engineerDataAdapter = new SqlDataAdapter("SELECT * FROM Engineers_tbl", connectionString);
-                connectionString.Open();
-                var builder = new SqlCommandBuilder(_engineerDataAdapter);
-                _engineerDataAdapter.Fill(_engineerDataSet, "Engineers_tbl");
-              
+                AddEngineersTbl(connectionString);
+                AddShuffledEngineersTbl(connectionString);
             }
-
         }
+
+        private void AddShuffledEngineersTbl(SqlConnection connectionString)
+        {
+            _shuffledEngineersDataAdapter = new SqlDataAdapter("SELECT * FROM Shuffeld_Engineers_tbl", connectionString);
+            _shuffledEngineersDataAdapter.Fill(_engineerDataSet, "Shuffeld_Engineers_tbl");
+        }
+
+        private void AddEngineersTbl(SqlConnection connectionString)
+        {
+            _engineerDataAdapter = new SqlDataAdapter("SELECT * FROM Engineers_tbl", connectionString);
+            connectionString.Open();
+            var builder = new SqlCommandBuilder(_engineerDataAdapter);
+            _engineerDataAdapter.Fill(_engineerDataSet, "Engineers_tbl");
+        }
+
         public void AddEngineer(BindingSource bidingSource, Engineer engineer)
         {
             DataTable table = _engineerDataSet.Tables["Engineers_tbl"];
@@ -108,29 +120,23 @@ namespace AmigoV2
 
         public object ShuffleEngineers()
         {
-            var table = _engineerDataSet.Tables["Engineers_tbl"];
+            var tableTest =  _engineerDataSet.Tables["Shuffeld_Engineers_tbl"];
+            int n = tableTest.Rows.Count;
 
+            for (int i = 0; i < n; i++)
+            {
+                int randomNo = i + this.random.Next(n - i);
 
+                var temp = tableTest.Rows[randomNo].ItemArray;
+                tableTest.Rows[randomNo].ItemArray = tableTest.Rows[i].ItemArray;
+                tableTest.Rows[i].ItemArray = temp;
+            }
 
-            SqlConnection connectionString = new SqlConnection(Settings.Default.EngineerConnection);
-            _shuffledEngineersDataAdapter = new SqlDataAdapter("SELECT * FROM Shuffeld_Engineers_tbl", connectionString);
-            var builder = new SqlCommandBuilder(_shuffledEngineersDataAdapter);
-            _shuffledEngineersDataAdapter.Fill(_engineerDataSet, "Shuffeld_Engineers_tbl");
-
-
-
-            _shuffledEngineersDataAdapter.Update(_engineerDataSet, "Shuffeld_Engineers_tbl");
-            connectionString.Dispose();
-            connectionString.Close();
-            return null;
-            
-            //cred ca o sa initializes tot in constructor si tabelul de ShuffledEng si o sa ii populez cu codul asta:
-            /*foreach (DataRow dr in dataTable1.Rows) {
-               if (/* some condition */)
-                dataTable2.Rows.Add(dr.ItemArray);*/
-
+            return tableTest;
         }
 
+
+       
         public object AddWorkdays()
         {
             throw new NotImplementedException();
@@ -144,7 +150,10 @@ namespace AmigoV2
         public object ShowSchedule()
         {
             return ShuffleEngineers();
-           
+
         }
     }
+
 }
+
+
