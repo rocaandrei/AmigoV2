@@ -13,9 +13,9 @@ namespace AmigoV2
     {
         DataSet _engineerDataSet;
         SqlDataAdapter _engineerDataAdapter;
+        SqlDataAdapter _shuffledEngineersDataAdapter;
 
-        int temporaryID = int.MaxValue;
-        Random randomNo = new Random();
+        int nextID = int.MaxValue;
 
         public EngineerDataSet()
         {
@@ -108,18 +108,27 @@ namespace AmigoV2
 
         public object ShuffleEngineers()
         {
-           
-
-            using (var connection = new SqlConnection(Settings.Default.EngineerConnection))
-            {
-                var _shuffleDataAdapter = new SqlDataAdapter("SELECT * FROM Shuffeld_Engineers_tbl ",connection);
-                _shuffleDataAdapter.Fill(_engineerDataSet, "Shuffeld_Engineers_tbl");
-            }
-            DataTable shuffleTable = _engineerDataSet.Tables["Shuffeld_Engineers_tbl"];
+            var table = _engineerDataSet.Tables["Engineers_tbl"];
 
 
 
-            return shuffleTable;
+            SqlConnection connectionString = new SqlConnection(Settings.Default.EngineerConnection);
+            _shuffledEngineersDataAdapter = new SqlDataAdapter("SELECT * FROM Shuffeld_Engineers_tbl", connectionString);
+            var builder = new SqlCommandBuilder(_shuffledEngineersDataAdapter);
+            _shuffledEngineersDataAdapter.Fill(_engineerDataSet, "Shuffeld_Engineers_tbl");
+
+
+
+            _shuffledEngineersDataAdapter.Update(_engineerDataSet, "Shuffeld_Engineers_tbl");
+            connectionString.Dispose();
+            connectionString.Close();
+            return null;
+            
+            //cred ca o sa initializes tot in constructor si tabelul de ShuffledEng si o sa ii populez cu codul asta:
+            /*foreach (DataRow dr in dataTable1.Rows) {
+               if (/* some condition */)
+                dataTable2.Rows.Add(dr.ItemArray);*/
+
         }
 
         public object AddWorkdays()
