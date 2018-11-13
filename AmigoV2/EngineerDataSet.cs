@@ -14,6 +14,7 @@ namespace AmigoV2
         DataSet _engineerDataSet;
         SqlDataAdapter _engineerDataAdapter;
         SqlDataAdapter _shuffledEngineersDataAdapter;
+        SqlDataAdapter _calendar;
 
         int temporaryID = int.MaxValue;
         Random random = new Random();
@@ -28,7 +29,14 @@ namespace AmigoV2
             {
                 AddEngineersTbl(connectionString);
                 AddShuffledEngineersTbl(connectionString);
+                AddCalendar(connectionString);
             }
+        }
+
+        private void AddCalendar(SqlConnection connectionString)
+        {
+            _calendar = new SqlDataAdapter("SELECT * FROM Calendar", connectionString);
+            _calendar.Fill(_engineerDataSet, "Calendar");
         }
 
         private void AddShuffledEngineersTbl(SqlConnection connectionString)
@@ -120,23 +128,20 @@ namespace AmigoV2
 
         public object ShuffleEngineers()
         {
-            var tableTest =  _engineerDataSet.Tables["Shuffeld_Engineers_tbl"];
-            int n = tableTest.Rows.Count;
+            var shuffledEngineersTbl =  _engineerDataSet.Tables["Shuffeld_Engineers_tbl"];
+            int n = shuffledEngineersTbl.Rows.Count;
 
             for (int i = 0; i < n; i++)
             {
                 int randomNo = i + this.random.Next(n - i);
 
-                var temp = tableTest.Rows[randomNo].ItemArray;
-                tableTest.Rows[randomNo].ItemArray = tableTest.Rows[i].ItemArray;
-                tableTest.Rows[i].ItemArray = temp;
+                var temp = shuffledEngineersTbl.Rows[randomNo].ItemArray;
+                shuffledEngineersTbl.Rows[randomNo].ItemArray = shuffledEngineersTbl.Rows[i].ItemArray;
+                shuffledEngineersTbl.Rows[i].ItemArray = temp;
             }
-
-            return tableTest;
+            return shuffledEngineersTbl;
         }
 
-
-       
         public object AddWorkdays()
         {
             throw new NotImplementedException();
@@ -153,7 +158,6 @@ namespace AmigoV2
 
         }
     }
-
 }
 
 
