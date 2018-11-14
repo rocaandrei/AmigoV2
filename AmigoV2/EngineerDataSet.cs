@@ -128,7 +128,7 @@ namespace AmigoV2
 
         public object ShuffleEngineers()
         {
-            var shuffledEngineersTbl =  _engineerDataSet.Tables["Shuffeld_Engineers_tbl"];
+            var shuffledEngineersTbl = _engineerDataSet.Tables["Shuffeld_Engineers_tbl"];
             int n = shuffledEngineersTbl.Rows.Count;
 
             for (int i = 0; i < n; i++)
@@ -157,7 +157,37 @@ namespace AmigoV2
 
             return shuffledEng;
         }
+        public object AddShifts()
+        {
+            DataTable engieers = (DataTable)AddWorkdays();
+            DataColumn shifts = new DataColumn();
+            shifts.ColumnName = "Shifts";
+            engieers.Columns.Add(shifts);
+            int maxShifts = 10;
+            for (int i = 0; i < engieers.Rows.Count; i++)
+            {
+                if (i < maxShifts)
+                {
+                    if (i % 2 == 0)
+                    {
+                        engieers.Rows[i][5] = "First shift";
+                    }
+                    else
+                    {
+                        engieers.Rows[i][5] = "Second shift";
+                    }
 
+                }
+            }
+            return engieers;
+        }
+
+        public object ShowSchedule()
+        {
+            return AddShifts();
+
+        }
+        #region Workdays
         private static void Monday(DataTable shuffledEng)
         {
             DataRow first = shuffledEng.Rows[0];
@@ -193,17 +223,8 @@ namespace AmigoV2
             DataRow _mondaySecond = shuffledEng.Rows[9];
             _mondaySecond[4] = Workdays.Vineri;
         }
+        #endregion
 
-        public object AddShifts()
-        {
-            throw new NotImplementedException();
-        }
-
-        public object ShowSchedule()
-        {
-            return AddWorkdays();
-
-        }
     }
 }
 
