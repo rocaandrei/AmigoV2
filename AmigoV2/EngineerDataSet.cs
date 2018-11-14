@@ -145,10 +145,12 @@ namespace AmigoV2
         public object AddWorkdays()
         {
             DataTable shuffledEng = (DataTable)ShuffleEngineers();
-            DataColumn workdays = new DataColumn();
-            workdays.ColumnName = "Workday";
-
-            shuffledEng.Columns.Add(workdays);
+            if (!shuffledEng.Columns.Contains("Workday"))
+            {
+                DataColumn workdays = new DataColumn();
+                workdays.ColumnName = "Workday";
+                shuffledEng.Columns.Add(workdays);
+            }
             Monday(shuffledEng);
             Tuesday(shuffledEng);
             Wednesday(shuffledEng);
@@ -160,9 +162,13 @@ namespace AmigoV2
         public object AddShifts()
         {
             DataTable engieers = (DataTable)AddWorkdays();
-            DataColumn shifts = new DataColumn();
-            shifts.ColumnName = "Shifts";
-            engieers.Columns.Add(shifts);
+
+            if (!engieers.Columns.Contains("Shifts"))
+            {
+                DataColumn shifts = new DataColumn();
+                shifts.ColumnName = "Shifts";
+                engieers.Columns.Add(shifts);
+            }
             int maxShifts = 10;
             for (int i = 0; i < engieers.Rows.Count; i++)
             {
@@ -184,8 +190,9 @@ namespace AmigoV2
 
         public object ShowSchedule()
         {
-            return AddShifts();
-
+            DataTable schedule = (DataTable)AddShifts();
+           
+            return schedule;
         }
         #region Workdays
         private static void Monday(DataTable shuffledEng)
