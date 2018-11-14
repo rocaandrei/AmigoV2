@@ -144,7 +144,54 @@ namespace AmigoV2
 
         public object AddWorkdays()
         {
-            throw new NotImplementedException();
+            DataTable shuffledEng = (DataTable)ShuffleEngineers();
+            DataColumn workdays = new DataColumn();
+            workdays.ColumnName = "Workday";
+
+            shuffledEng.Columns.Add(workdays);
+            Monday(shuffledEng);
+            Tuesday(shuffledEng);
+            Wednesday(shuffledEng);
+            Thursday(shuffledEng);
+            Friday(shuffledEng);
+
+            return shuffledEng;
+        }
+
+        private static void Monday(DataTable shuffledEng)
+        {
+            DataRow first = shuffledEng.Rows[0];
+            first[4] = Workdays.Luni;
+            DataRow second = shuffledEng.Rows[1];
+            second[4] = Workdays.Luni;
+        }
+        private static void Tuesday(DataTable shuffledEng)
+        {
+            DataRow first = shuffledEng.Rows[2];
+            first[4] = Workdays.Marti;
+            DataRow second = shuffledEng.Rows[3];
+            second[4] = Workdays.Marti;
+        }
+        private static void Wednesday(DataTable shuffledEng)
+        {
+            DataRow first = shuffledEng.Rows[4];
+            first[4] = Workdays.Miercuri;
+            DataRow _mondaySecond = shuffledEng.Rows[5];
+            _mondaySecond[4] = Workdays.Miercuri;
+        }
+        private static void Thursday(DataTable shuffledEng)
+        {
+            DataRow _mondayFirst = shuffledEng.Rows[6];
+            _mondayFirst[4] = Workdays.Joi;
+            DataRow _mondaySecond = shuffledEng.Rows[7];
+            _mondaySecond[4] = Workdays.Joi;
+        }
+        private static void Friday(DataTable shuffledEng)
+        {
+            DataRow _mondayFirst = shuffledEng.Rows[8];
+            _mondayFirst[4] = Workdays.Vineri;
+            DataRow _mondaySecond = shuffledEng.Rows[9];
+            _mondaySecond[4] = Workdays.Vineri;
         }
 
         public object AddShifts()
@@ -154,7 +201,7 @@ namespace AmigoV2
 
         public object ShowSchedule()
         {
-            return ShuffleEngineers();
+            return AddWorkdays();
 
         }
     }

@@ -73,6 +73,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ScheduleEngineersDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.ScheduleEngineersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ScheduleEngineersDataGridView.Dock = System.Windows.Forms.DockStyle.Top;
             this.ScheduleEngineersDataGridView.Location = new System.Drawing.Point(3, 3);
             this.ScheduleEngineersDataGridView.Name = "ScheduleEngineersDataGridView";
             this.ScheduleEngineersDataGridView.RowTemplate.Height = 24;
