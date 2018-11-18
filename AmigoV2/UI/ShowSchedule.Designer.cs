@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShowSchedule));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ScheduleTabControl = new System.Windows.Forms.TabControl();
             this.CalendarTabPage = new System.Windows.Forms.TabPage();
+            this.ExportToExcelBt = new System.Windows.Forms.Button();
             this.ScheduleEngineersDataGridView = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.ExportToExcelBt = new System.Windows.Forms.Button();
             this.ScheduleTabControl.SuspendLayout();
             this.CalendarTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ScheduleEngineersDataGridView)).BeginInit();
@@ -62,6 +62,22 @@
             this.CalendarTabPage.TabIndex = 0;
             this.CalendarTabPage.Text = "Calendar";
             this.CalendarTabPage.UseVisualStyleBackColor = true;
+            // 
+            // ExportToExcelBt
+            // 
+            this.ExportToExcelBt.BackColor = System.Drawing.Color.LightGreen;
+            this.ExportToExcelBt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ExportToExcelBt.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExportToExcelBt.ForeColor = System.Drawing.Color.Green;
+            this.ExportToExcelBt.Image = ((System.Drawing.Image)(resources.GetObject("ExportToExcelBt.Image")));
+            this.ExportToExcelBt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ExportToExcelBt.Location = new System.Drawing.Point(384, 387);
+            this.ExportToExcelBt.Name = "ExportToExcelBt";
+            this.ExportToExcelBt.Size = new System.Drawing.Size(274, 88);
+            this.ExportToExcelBt.TabIndex = 1;
+            this.ExportToExcelBt.Text = "          Export to Excel";
+            this.ExportToExcelBt.UseVisualStyleBackColor = false;
+            this.ExportToExcelBt.Click += new System.EventHandler(this.ExportToExcelBt_Click_1);
             // 
             // ScheduleEngineersDataGridView
             // 
@@ -91,21 +107,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // ExportToExcelBt
-            // 
-            this.ExportToExcelBt.BackColor = System.Drawing.Color.LightGreen;
-            this.ExportToExcelBt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ExportToExcelBt.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExportToExcelBt.ForeColor = System.Drawing.Color.Green;
-            this.ExportToExcelBt.Image = ((System.Drawing.Image)(resources.GetObject("ExportToExcelBt.Image")));
-            this.ExportToExcelBt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ExportToExcelBt.Location = new System.Drawing.Point(384, 387);
-            this.ExportToExcelBt.Name = "ExportToExcelBt";
-            this.ExportToExcelBt.Size = new System.Drawing.Size(274, 88);
-            this.ExportToExcelBt.TabIndex = 1;
-            this.ExportToExcelBt.Text = "          Export to Excel";
-            this.ExportToExcelBt.UseVisualStyleBackColor = false;
             // 
             // ShowSchedule
             // 
