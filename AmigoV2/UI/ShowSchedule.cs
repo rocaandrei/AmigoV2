@@ -32,6 +32,11 @@ namespace AmigoV2.UI
             ScheduleEngineersDataGridView.DataSource = _engineersSource;
         }
 
+        /// <summary>
+        /// Documentation from: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/interop/how-to-access-office-onterop-objects
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ExportToExcelBt_Click_1(object sender, EventArgs e)
         {
             var _excelApp = new Microsoft.Office.Interop.Excel.Application();
@@ -41,11 +46,10 @@ namespace AmigoV2.UI
             _excelApp.Visible = true;
 
 
-            worksheet1.Cells[1, 1] = "The engieers ho will take turn the week between " + DateTime.Today.ToString("d.MM.yyyy") + " and " + DateTime.Today.ToString("d.MM.yyyy");
+            worksheet1.Cells[1, "A"] = "The engieers ho will take turn the week between " + DateTime.Today.ToString("d.MM.yyyy") + " and " + DateTime.Today.ToString("d.MM.yyyy");
             for (int i = 1; i < ScheduleEngineersDataGridView.ColumnCount + 1; i++)
             {
                 worksheet1.Cells[3, i] = ScheduleEngineersDataGridView.Columns[i - 1].HeaderText;
-
             }
             for (int i = 0; i < 10/*ScheduleEngineersDataGridView.Rows.Count - 1*/; i++)
             {
@@ -54,6 +58,13 @@ namespace AmigoV2.UI
                     worksheet1.Cells[i + 4, j + 1] = ScheduleEngineersDataGridView.Rows[i].Cells[j].Value.ToString();
                 }
             }
+
+            string[] columsToArange = new string[] { "B", "C", "D", "E", "F" };
+            for (int i = 0; i < columsToArange.Length; i++)
+            {
+                worksheet1.Columns[columsToArange[i]].AutoFit();
+            }
+
         }
     }
 }
