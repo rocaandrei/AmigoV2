@@ -46,26 +46,31 @@ namespace AmigoV2.UI
             _excelApp.Visible = true;
             DateTime currentDay = DateTime.Today; //.ToString("d.MM.yyyy");
             DateTime endOfWeek = currentDay.AddDays(5);
-          
+
             worksheet1.Cells[1, "A"] = "The engieers ho will take turn the week between " + currentDay.ToString("d.MM.yyyy") + " and " + endOfWeek.ToString("d.MM.yyyy");
+            int neededEngineers = 10;
             for (int i = 1; i < ScheduleEngineersDataGridView.ColumnCount + 1; i++)
             {
                 worksheet1.Cells[3, i] = ScheduleEngineersDataGridView.Columns[i - 1].HeaderText;
             }
-            for (int i = 0; i < 10/*ScheduleEngineersDataGridView.Rows.Count - 1*/; i++)
+
+            for (int i = 0; i < neededEngineers; i++)
             {
                 for (int j = 0; j < ScheduleEngineersDataGridView.ColumnCount; j++)
                 {
                     worksheet1.Cells[i + 4, j + 1] = ScheduleEngineersDataGridView.Rows[i].Cells[j].Value.ToString();
                 }
             }
+            AutoFitColumns(worksheet1);
+        }
 
+        private static void AutoFitColumns(Worksheet workSheet)
+        {
             string[] columsToArange = new string[] { "B", "C", "D", "E", "F" };
             for (int i = 0; i < columsToArange.Length; i++)
             {
-                worksheet1.Columns[columsToArange[i]].AutoFit();
+                workSheet.Columns[columsToArange[i]].AutoFit();
             }
-
         }
     }
 }
