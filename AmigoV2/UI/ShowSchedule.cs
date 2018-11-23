@@ -44,8 +44,10 @@ namespace AmigoV2.UI
             Worksheet worksheet1 = _excelApp.ActiveSheet;
             worksheet1.Name = "Schedule for next week";
             _excelApp.Visible = true;
-
-            worksheet1.Cells[1, "A"] = "The engieers ho will take turn the week between " + DateTime.Today.ToString("d.MM.yyyy") + " and " + DateTime.Today.ToString("d.MM.yyyy");
+            DateTime currentDay = DateTime.Today; //.ToString("d.MM.yyyy");
+            DateTime endOfWeek = currentDay.AddDays(5);
+          
+            worksheet1.Cells[1, "A"] = "The engieers ho will take turn the week between " + currentDay.ToString("d.MM.yyyy") + " and " + endOfWeek.ToString("d.MM.yyyy");
             for (int i = 1; i < ScheduleEngineersDataGridView.ColumnCount + 1; i++)
             {
                 worksheet1.Cells[3, i] = ScheduleEngineersDataGridView.Columns[i - 1].HeaderText;
