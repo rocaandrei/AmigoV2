@@ -45,7 +45,6 @@ namespace AmigoV2.UI
             worksheet1.Name = "Schedule for next week";
             _excelApp.Visible = true;
 
-
             worksheet1.Cells[1, "A"] = "The engieers ho will take turn the week between " + DateTime.Today.ToString("d.MM.yyyy") + " and " + DateTime.Today.ToString("d.MM.yyyy");
             for (int i = 1; i < ScheduleEngineersDataGridView.ColumnCount + 1; i++)
             {

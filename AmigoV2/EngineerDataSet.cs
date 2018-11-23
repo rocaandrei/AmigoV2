@@ -213,22 +213,22 @@ namespace AmigoV2
         {
             DataRow first = shuffledEng.Rows[4];
             first[4] = Workdays.Miercuri;
-            DataRow _mondaySecond = shuffledEng.Rows[5];
-            _mondaySecond[4] = Workdays.Miercuri;
+            DataRow second = shuffledEng.Rows[5];
+            second[4] = Workdays.Miercuri;
         }
         private static void Thursday(DataTable shuffledEng)
         {
-            DataRow _mondayFirst = shuffledEng.Rows[6];
-            _mondayFirst[4] = Workdays.Joi;
-            DataRow _mondaySecond = shuffledEng.Rows[7];
-            _mondaySecond[4] = Workdays.Joi;
+            DataRow first = shuffledEng.Rows[6];
+            first[4] = Workdays.Joi;
+            DataRow second = shuffledEng.Rows[7];
+            second[4] = Workdays.Joi;
         }
         private static void Friday(DataTable shuffledEng)
         {
-            DataRow _mondayFirst = shuffledEng.Rows[8];
-            _mondayFirst[4] = Workdays.Vineri;
-            DataRow _mondaySecond = shuffledEng.Rows[9];
-            _mondaySecond[4] = Workdays.Vineri;
+            DataRow first = shuffledEng.Rows[8];
+            first[4] = Workdays.Vineri;
+            DataRow second = shuffledEng.Rows[9];
+            second[4] = Workdays.Vineri;
         }
         #endregion
 
