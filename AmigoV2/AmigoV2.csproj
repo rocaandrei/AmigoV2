@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExcelProcessor.cs" />
     <Compile Include="UI\AddNewEngineer.cs">
       <SubType>Form</SubType>
     </Compile>

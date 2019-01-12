@@ -339,7 +339,7 @@
             this.tabPageGrid.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageGrid.Name = "tabPageGrid";
             this.tabPageGrid.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPageGrid.Size = new System.Drawing.Size(688, 405);
+            this.tabPageGrid.Size = new System.Drawing.Size(991, 523);
             this.tabPageGrid.TabIndex = 1;
             this.tabPageGrid.Text = "Grid";
             this.tabPageGrid.UseVisualStyleBackColor = true;
@@ -352,7 +352,7 @@
             this.EmployeesDataGridView.Location = new System.Drawing.Point(4, 4);
             this.EmployeesDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.EmployeesDataGridView.Name = "EmployeesDataGridView";
-            this.EmployeesDataGridView.Size = new System.Drawing.Size(680, 397);
+            this.EmployeesDataGridView.Size = new System.Drawing.Size(983, 515);
             this.EmployeesDataGridView.TabIndex = 0;
             // 
             // AmigoApp
